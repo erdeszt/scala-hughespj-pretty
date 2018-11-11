@@ -9,6 +9,7 @@ lazy val strictlyPretty = Project("hughespj-pretty", file("."))
       publishMavenStyle := true,
       licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
       libraryDependencies ++= Seq(
+        "org.typelevel" %% "spire" % "0.14.1",
         "com.lihaoyi" %% "utest" % "0.6.5" % Test
       )
     )
