@@ -22,11 +22,7 @@ object Classy {
     }
 
     def pPrintList[Ann](prettyLevel: PrettyLevel, values: List[A]): Doc[Ann] = {
-      val printListStructure = punctuate[Ann](comma).andThen(fsep).andThen(brackets)
-      val prettyValues       = values.map(pPrintPrec[Ann](prettyLevel, 0, _))
-
-      printListStructure(prettyValues)
-
+      brackets(fsep(punctuate[Ann](comma)(values.map(pPrintPrec[Ann](prettyLevel, 0, _)))))
     }
   }
 
